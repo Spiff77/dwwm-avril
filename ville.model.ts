@@ -1,6 +1,8 @@
 export class Ville {
+
     
     category: string;
+    private $refUnesco: string = "15487";
 
     constructor(public name: string, public country: string, public population: number, public capital: boolean) {
         if(this.capital) {
@@ -20,6 +22,10 @@ export class Ville {
             result = 'De même taille'
         }
         return this.name + result + city.name
+    }
+
+    get refUnesco(): string {
+        return this.$refUnesco;
     }
 }
 

@@ -8,6 +8,7 @@ define(["require", "exports"], function (require, exports) {
             this.country = country;
             this.population = population;
             this.capital = capital;
+            this.$refUnesco = "15487";
             if (this.capital) {
                 this.category = (population > 600000) ? "Big" : "Small";
             }
@@ -28,6 +29,13 @@ define(["require", "exports"], function (require, exports) {
             }
             return this.name + result + city.name;
         };
+        Object.defineProperty(Ville.prototype, "refUnesco", {
+            get: function () {
+                return this.$refUnesco;
+            },
+            enumerable: false,
+            configurable: true
+        });
         return Ville;
     }());
     exports.Ville = Ville;

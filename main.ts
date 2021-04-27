@@ -1,35 +1,12 @@
-import {Employee} from './companymanager/employe.model';
-import {BankInfo} from './companymanager/bankinfo.model';
-import {Company} from './companymanager/company.model';
-import {Status} from './companymanager/status.model';
-import {Car} from './car.model';
+import {Product} from './product.model';
 
-let company = new Company('MaSuperEntreprise')
-let emp1 = new Employee(10,
-    'Jean',
-    'Guy',
-    2000,
-    company,
-    new BankInfo('125df42', 'la banque'),
-    new Status(true, 2020)
-);
+let p1 = new Product(100, 'green')
+let p2 = new Product(150, 'red')
 
-let emp2 = new Employee(11,
-    'Paul',
-    'Guy',
-    2000,
-    company,
-    new BankInfo('125df42', 'la banque'),
-    new Status(true, 2020)
-);
+console.log(p1.getRealPrice())
+console.log(p2.getRealPrice())
 
+Product.amountTaxe = 50;
 
-let c1 = new Car('Peugeot', 'red', 2020);
-let c2 = new Car('Renault', 'green', 2020);
-
-Car.maxGasTankSize = 400
-
-c2.fillTank();
-
-console.log(c1)
-console.log(c2)
+console.log(p1.getRealPrice())
+console.log(p2.getRealPrice())
